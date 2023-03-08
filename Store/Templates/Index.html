@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    .carousel-item img {
+    object-fit: cover;
+    object-position: top;
+    height:60vh;
+    overflow: hidden;
+    }
+    </style>
+
+</head>
+<body>
+{% include 'Navbar.html' %}
+{% include 'Silder.html' %}
+
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-3" style="background-color:#CCB5C8;">Latest Offers</h2>
+            <hr style="border-color: #b8bfc2">
+        </div>
+        {% for item in products %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-3">
+                    <img src="{{item.product_image.url}}" height="300px" width="300px" class="card-image-top" alt="Categories">
+                    <a href="{% url 'product_details' item.category.name item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{item.name}}</h5>
+                        <p class="card-text">
+                            <span class="float-start old_price my-2 text-danger"><s>Rs.{{item.orginal_price | stringformat:'d'}}</s></span>
+                            <span class="float-end new_price">Rs.{{item.selling_price | stringformat:'d'}}</span>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% include 'Footer.html' %}
+</body>
+</html>

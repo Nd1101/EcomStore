@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Page</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+   .old_price {
+        font-weight: bold;
+        color: red;
+   }
+    .new_price {
+        font-weight: bold;
+        background-color: green;
+        color: white;
+        padding:2px;
+        border-radius:5px;
+        margin-bottom: 2px;
+   }
+    </style>
+
+</head>
+
+<body>
+{% include 'Navbar.html' %}
+<section class="bg-light py-4 my-5 " style="min-height:600px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <h4 class="mb-3" style="background-color:#CCB5C8;">{{category_name}} Products</h4>
+                <hr style="border-color:#b8bfc2;">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active">{{category_name}} Collections</li>
+                  </ol>
+                </nav>
+                {% include 'Messages.html' %}
+            </div>
+            <div class="container">
+                <div class="row">
+            {% for item in products %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-4">
+                    <img src="{{item.product_image.url}}" height="200px" width="200px" class="card-image-top" alt="Categories">
+                    <a href="{% url 'product_details' category_name item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{item.name}}</h5>
+                        <p class="card-text">
+                            <span class="float-start old_price"><s>Rs.{{item.orginal_price | stringformat:'d'}}</s></span>
+                            <span class="float-end new_price">Rs.{{item.selling_price | stringformat:'d'}}</span>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+        </div>
+</section>
+{% include 'Footer.html' %}
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    </style>
+    <style>
+            .blink {
+                animation: blinker 2s linear infinite;
+                color: #d0298b;
+                font-family: sans-serif;
+                font-size: 20px;
+            }
+            @keyframes blinker {
+                25% {
+                    opacity: 10;
+                }
+            }
+    </style>
+</head>
+<body>
+{% include 'Navbar.html' %}
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 style="background-color:#CCB5C8;">About!</h2>
+            <hr style="border-color:#b8bfc2;">
+            {% include 'Messages.html' %}
+        </div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <marquee class="blink"><b>About Shopsify...</b></marquee>
+        </div>
+    </div>
+
+    <section class="py-4 my-5" style="margin-top:600px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+              <p>
+                Shopping is an activity in which a customer browses the available goods or services presented by one or more retailers with the potential intent to purchase a suitable selection of them. A typology of shopper types has been developed by scholars which identifies one group of shoppers as recreational shoppers, that is, those who enjoy shopping and view it as a leisure activity.</p>
+
+              <p>Online shopping has become a major disruptor in the retail industry as consumers can now search for product information and place product orders across different regions. Online retailers deliver their products directly to the consumers' home, offices, or wherever they want. The B2C (business to consumer) process has made it easy for consumers to select any product online from a retailer's website and to have it delivered relatively quickly. Using online shopping methods, consumers do not need to consume energy by physically visiting physical stores. This way they save time and the cost of traveling. A retailer or a shop is a business that presents a selection of goods and offers to trade or sell them to customers for money or other goods.</p>
+
+              <p>Shoppers' shopping experiences may vary. They are based on a variety of factors including how the customer is treated, convenience, the type of goods being purchased, and mood</p>
+
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% include 'Footer.html' %}
+</body>
+</html>

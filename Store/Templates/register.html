@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    </style>
+    <style>
+            .blink {
+                animation: blinker 2s linear infinite;
+                color: #d0298b;
+                font-family: sans-serif;
+                font-size: 20px;
+            }
+            @keyframes blinker {
+                25% {
+                    opacity: 10;
+                }
+            }
+        </style>
+</head>
+<body>
+{% include 'Navbar.html' %}
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 style="background-color:#CCB5C8;">Wanna Be a SHOPSIFYian..</h2>
+            <hr style="border-color:#b8bfc2;">
+            {% include 'Messages.html' %}
+        </div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <marquee class="blink"><b>Register Heree...</b></marquee>
+        </div>
+    </div>
+    <section class="py-4 my-5" style="margin-top:600px;">
+    <section class="container">
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="" class="form-label"><b>User Name</b></label>
+                        {{form.username}}
+                        {% if form.errors.username %}
+                        <label class="text-danger">{{form.errors.username}}</label>
+                        {% endif %}
+                    </div>
+                     <div class="mb-4">
+                         <label for="" class="form-label"><b>Email</b></label>
+                        {{form.email}}
+                         {% if form.errors.email %}
+                        <label class="text-danger">{{form.errors.email}}</label>
+                        {% endif %}
+                    </div>
+                     <div class="mb-4">
+                         <label for="" class="form-label"><b>Password</b></label>
+                        {{form.password1}}
+                         {% if form.errors.password1 %}
+                        <label class="text-danger">{{form.errors.password1}}</label>
+                        {% endif %}
+                    </div>
+                     <div class="mb-4">
+                         <label for="" class="form-label"><b>Confirm Password</b></label>
+                        {{form.password2}}
+                         {% if form.errors.password2 %}
+                        <label class="text-danger">{{form.errors.password2}}</label>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+                <p class="my-2">Already a User ? <a href="{% url 'login' %}">Login Now</a> </p>
+            </div>
+</div>
+</section>
+{% include 'Footer.html' %}
+</body>
+</html>
+

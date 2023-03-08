@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Faq</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    </style>
+    <style>
+            .blink {
+                animation: blinker 2s linear infinite;
+                color: #d0298b;
+                font-family: sans-serif;
+                font-size: 20px;
+            }
+            @keyframes blinker {
+                25% {
+                    opacity: 10;
+                }
+            }
+    </style>
+</head>
+<body>
+{% include 'Navbar.html' %}
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 style="background-color:#CCB5C8;">FAQ!</h2>
+            <hr style="border-color:#b8bfc2;">
+            {% include 'Messages.html' %}
+        </div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <marquee class="blink"><b>FAQ...</b></marquee>
+        </div>
+    </div>
+
+    <section class="py-4 my-5" style="margin-top:600px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    1. <b>Q: How can I order</b>
+A: You can order easily using our online platform. When you find a product you need, you can add it to cart, login and go through the ordering process. After the order is ready, you will receive order summary to your email. Order summary will also be stored to your account.                </p>
+                <p>
+                    2. <b>Q: Why should I buy online?</b>
+A: Speeding up the process. By ordering online you will you will get prices faster and you will be able to go through order confirmation and payment process much faster. This could save days of your time.                </p>
+                    3. <b>Q: What information should I input when ordering?</b>
+A: our online ordering system will ask for all the important information you should submit. If you have a VAT number, please remember to submit it. This will make sure the shipment is not delayed because of the lack of VAT number </p>
+                <p>
+                4. <b>Q: How can I change delivery address?</b>
+A: Sign in to your account and go to “my account”. On “my account” you can change all your contact information.                </p>
+                <p>
+                5. <b> Q: Can I return a product?</b>
+A: If you want to return a product, please contact shopsify@company.com</p>
+
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% include 'Footer.html' %}
+</body>
+</html>

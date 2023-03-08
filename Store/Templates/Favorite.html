@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Collections</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+{% include 'Navbar.html' %}
+<section class="bg-light py-4 my-5" style="min-height:600px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h4 class="mb-3" style="background-color:#CCB5C8;">Wishlist Items</h4>
+          <hr style="border-color:#b8bfc2;">
+        </div>
+
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Unit</th>
+                <th>Action</th>
+            </tr>
+
+
+            {% for item in fav %}
+           <tr>
+              <td><img src="{{item.product.product_image.url}}" height="75px" alt="{{item.product.name}}"></td>
+              <td>{{item.product.name}}</td>
+              <td>{{item.product.selling_price | stringformat:'d'}}</td>
+              <td><a href="{% url 'remove_fav' item.id %}"  onclick="return confirm('Are you sure to Remove?')"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Remove</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+      </div>
+      </div>
+  </section>
+
+{% include 'Footer.html' %}
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link href="{% static 'css/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/js/bootstrap.min.js' %}" type="text/javascript"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    html {
+        font-size: 14px;
+    }
+    body {
+        font-family: 'Noto Sans', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    </style>
+    <style>
+            .blink {
+                animation: blinker 2s linear infinite;
+                color: #d0298b;
+                font-family: sans-serif;
+                font-size: 20px;
+            }
+            @keyframes blinker {
+                25% {
+                    opacity: 10;
+                }
+            }
+    </style>
+</head>
+<body>
+{% include 'Navbar.html' %}
+<div class="container" style="margin-top:70px;">
+    <div class="row">
+        <div class="col-12">
+            <h2 style="background-color:#CCB5C8;">Blog!</h2>
+            <hr style="border-color:#b8bfc2;">
+            {% include 'Messages.html' %}
+        </div>
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <marquee class="blink"><b>Blogs...</b></marquee>
+        </div>
+    </div>
+
+    <section class="py-4 my-5" style="margin-top:600px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    1. <b>Heart Bows & Makeup</b>
+        This blog is the dream destination of every girl who loves makeup, beauty, shopping, fashion, hearts, pink, bows, especially bows. The look of the blog will make you feel like a princess in a place where you get everything that you love. Here you will find reviews, swatches, latest trends, new product launches, different fashion looks, tips and tricks, tutorials, DIY and more. You also get to know about various spa and salon reviews and information about different events happenings. All the major brands are reviews so you will find all that you are looking for here.
+                </p>
+                <p>
+                    2. <b>Best Shopping Site List</b>
+        If you are a person that spends money wisely and does not buy a product without full research beforehand then this site is for you. It provides you articles on different types of products, and services so that you do not have to spend hours going through different sites. They have already done the research and everything is provided to you at your figure tips. The blog makes it easier to compare similar products and services and that helps you a lot. Through this site you can become the person who knows everything and people come and ask you for advice.
+                </p>
+                    3. <b>Style Delight</b>
+        This blog is for every girl next door who loves fashion but finds it difficult to pull of the Lady Gaga style dresses that all the other fashion blogs show as trendy. They may look good in picture but lets face the truth, they are not at all practical. This blog breaks down all the looks and finds practical ways to substitute the complex style into wearable cloths. Through the tips and tricks in the blog you will become a fashion icon and able to make heads turn. The blog gives you full outfits so that there is nothing left to guess and you can go on a shopping spree without worrying about a thing.
+                <p>
+                4. <b>Time Please Life</b>
+        You will be able to connect with the blog as the blogger, Soujanya, is just like any other  girl, shopping to escape the world and helping everyone in making good shopping choices. Here you will find information about all types of shopping, street, high end shops and online. She understands that everyone has different taste and shop different ways so she has everything covered. She will also take you to places all over India so that you do not feel secluded if you do not have the stuff she is talking about, in the area that you live. She also has great décor ideas that you can copy to make your home stylish and reflecting your personality.
+                </p>
+                <p>
+                5. <b>Dress and Makeup</b>
+        This blogger is a self confessed shopoholic and loves cosmetics, jewellery, makeup, dresses and any excuse to shop. You can always find her in a market looking through stuff and buying everything within her reach. So she becomes the perfect person you can get shopping tips from. She covers everything from fashion to makeup so that you can go out looking stunning and flawless from every angle. Her reviews are honest and truthful and are based on her personal experience to they can be trusted a 100%. There is nothing better than getting free stuff. There are regular giveaways so everyone is sure to fall in love with the blog.
+                </p>
+                6. <b>Change The Style Now</b>
+        Anuja Bhatt, the blogger, is passionate about shopping, style and fashion. She loves what she does and that reflects from the blog. Her free spirit can not be caged and so she presents her unique take on fashion. She also gives you first hand information on discounts and coupons that you can use so that you shop freely without running out of cash. If you are a little doubtful about trying out products from new site for the first time then you need not worry. The blogger provides to you genuine shopping experience from various sites and gives out detailed experience. Her reviews can be trusted as they are real and true.
+                <p>
+                7. <b>Vstyle</b>
+        this blog talks about stuff that you have been looking for all your life but are not able to find it. along with your everyday shopping items, it talks about things like cheap wedding dresses and shoes, custom made dresses, wigs, bridesmaid dresses, hair extensions etc. all the reviews are in detail and with pictures so that along with the words you get to see the stuff the blogger is talking about. the blogger shares the pros and cons of all the sites so that nothing is hidden from you and you get the full truthful experience.
+                </p>
+                <p>
+                8. <b>Stay Gorgeous</b>
+        If you are the type of person that is always short on cash but wants to buy everything in sight then this is the site for you. They have beauty products that will not cost your entire life’s savings and is budget friendly. They also have DIYs so that you can make what you can’t buy. They will make your life easier by giving out simple tricks to make things yourself and turn your old non used products into the best thing you ever bought. They also have your back and tell you about home remedies that than magically cure skin problems.
+                </p>
+                <p>
+                9. <b>Shopping Style And Us</b>
+        This blog is all about shoping. the blogger loves shopping and that is what this blog is about. Most of the shopping blogs only cater to women but this blog also has stuff for men and kids. It has information on men’s style, grooming, fashion magazines and much more. it tells you about fashion and beauty so that everything is covered. This blog explores more than online shopping and also tells you about products from stores. It makes you beautiful from outside as well as the inside with health tips, DIY and more.
+                </p>
+                <p>
+                    10. <b>Crazy For Cosmetics</b>
+        Her love affair with cosmetics started at the age of three and it has grown ever since. Here you will find reviews about beauty products so that you can compare different products easily and pick the perfect product for you without any difficulty. The blogger also tells you how to achieve the exact look that you saw your favourite actress in. From party looks to casual looks, You have it all over here. If you need a break from all the shopping and go on a vacation then the blogger also has tips for that. Visit this site for a complete shopping experience and a place where you can find everything.
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+{% include 'Footer.html' %}
+</body>
+</html>
